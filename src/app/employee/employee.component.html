@@ -1,0 +1,31 @@
+<div class="container">  
+    <h1>Employee Form</h1>  
+    <form (ngSubmit)=onSubmit()>  
+      <div>  
+        <label for="name">Name</label>  
+        <input type="text"  id="name" [(ngModel)]="model.name" name="name"  required>  
+      </div>  
+      <div>  
+        <label for="alterEgo">Department</label>  
+        <input type="text"  id="dept" name="dept"  [(ngModel)]="model.dept"required>  
+      </div> 
+      
+      <div>  
+        <label for="power">Employee Power</label>  
+        <select id="power" name="power" [(ngModel)]="model.power" required>  
+          <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>  
+        </select>  
+      </div>  
+
+      <input type="submit" value="Submit">
+    </form>  
+</div>  
+
+<div *ngIf="submitted">
+  <div><span> Name: </span><span>{{model.name }} </span></div>
+  <div><span> Dept: </span> <span>{{model.dept }} </span></div>
+   <div><span> Power: </span> <span>{{model.power }} </span></div>
+</div>
+<!--<div>{{employee.name}}</div>
+<div>{{employee.power}}</div>-->
+
